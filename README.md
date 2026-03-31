@@ -1,4 +1,4 @@
-# TechLogix — Migración a Azure Cloud
+# ☁️ TechLogix — Migración a Azure Cloud
 
 Migración y modernización de la infraestructura on-premise de **TechLogix** a Microsoft Azure, utilizando Terraform como herramienta de IaC.
 
