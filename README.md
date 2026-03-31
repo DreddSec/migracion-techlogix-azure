@@ -1,14 +1,14 @@
 # ☁️ TechLogix — Migración a Azure Cloud
 
-| Migración y modernización de la infraestructura on-premise de **TechLogix** a Microsoft Azure, utilizando Terraform como herramienta de IaC.
+> Migración y modernización de la infraestructura on-premise de **TechLogix** a Microsoft Azure, utilizando Terraform como herramienta de IaC.
 
-Este proyecto es la evolución cloud del [proyecto ASIR on-premise](https://github.com/DreddSec/proyecto-asir-techlogix), donde se implementó una infraestructura completa con pfSense, Samba AD, servidores de archivos, web y monitorización sobre VirtualBox.
+> Este proyecto es la evolución cloud del [proyecto ASIR on-premise](https://github.com/DreddSec/proyecto-asir-techlogix), donde se implementó una infraestructura completa con pfSense, Samba AD, servidores de archivos, web y monitorización sobre VirtualBox.
 
 ---
 
 ## Arquitectura
 
-### On-Premise → Azure
+### 🏬 On-Premise → 🅰️ Azure
 
 | Componente On-Premise | Servicio Azure | Tipo de migración |
 |---|---|---|
@@ -62,7 +62,7 @@ Azure Subscription
 
 ---
 
-## Estructura del repositorio
+## 📋 Estructura del repositorio
 
 ```
 techlogix-azure/
@@ -81,7 +81,7 @@ techlogix-azure/
 
 ---
 
-## Decisiones de diseño
+## ❓ Decisiones de diseño
 
 **¿Por qué Container Apps en vez de una VM con LAMP?**
 El stack LAMP original (Apache + MySQL + PHP + WordPress en una VM) es un enfoque monolítico. Container Apps permite escalar el frontend independientemente de la base de datos, aplicar actualizaciones sin downtime mediante revisiones, y eliminar la gestión del sistema operativo subyacente. MySQL Flexible Server gestiona parches, backups y alta disponibilidad de forma nativa.
@@ -97,7 +97,7 @@ Terraform es agnóstico al cloud provider (Azure, AWS, GCP) lo que lo hace más 
 
 ---
 
-## State remoto
+## 🛡 State remoto
 
 El estado de Terraform se almacena de forma remota en Azure Storage, siguiendo las buenas prácticas de trabajo en equipo:
 
@@ -112,7 +112,7 @@ backend "azurerm" {
 
 ---
 
-## Seguridad implementada
+## ⚔️ Seguridad implementada
 
 | Control | Implementación |
 |---|---|
@@ -126,7 +126,7 @@ backend "azurerm" {
 
 ---
 
-## Recursos desplegados (39 total)
+## 📊 Recursos desplegados (39 total)
 
 ```
 terraform state list
@@ -177,21 +177,22 @@ module.storage.azurerm_storage_share.produccion
 
 ---
 
-## Costes estimados
+## 💰 Costes estimados
 
 | Recurso | SKU | $/mes aprox |
 |---|---|---|
-| Container Apps (WordPress) | Consumption | ~$5 |
-| MySQL Flexible Server | B_Standard_B1ms | ~$12 |
-| Azure Files | Standard LRS 40GB | ~$2 |
-| Log Analytics Workspace | Pay-per-GB (5GB free) | ~$0 |
-| VNet + NSGs + Public IP | — | ~$3 |
-| Azure Monitor alertas | — | ~$0 |
-| **Total** | | **~$22-25/mes** |
+| Container Apps (WordPress) | Consumption | ~€5 |
+| MySQL Flexible Server | B_Standard_B1ms | ~€12 |
+| Azure Files | Standard LRS 40GB | ~€2 |
+| Log Analytics Workspace | Pay-per-GB (5GB free) | ~€0 |
+| VNet + NSGs + Public IP | — | ~€3 |
+| Azure Monitor alertas | — | ~€0 |
+| Azure Bastion | Desarollador | ~€0
+| **Total** | | **~€22-25/mes** |
 
 ---
 
-## Tecnologías utilizadas
+## ⚙️ Tecnologías utilizadas
 
 - **Terraform** >= 1.3 — IaC
 - **Azure Provider** ~> 4.0 — recursos ARM
