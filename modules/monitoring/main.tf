@@ -1,7 +1,7 @@
-# Log Analytics Workspace ya lo creamos en containers, lo referenciamos aquí
-# Este módulo añade alertas y dashboards encima
+# Log Analytics Workspace
+# Este módulo añade alertas y dashboards
 
-# Action Group — equivalente a tu configuración de alertas por email en Zabbix
+# Action Group — equivalente a la configuración de alertas por email en Zabbix
 resource "azurerm_monitor_action_group" "main" {
   name                = "ag-${var.project}-${var.environment}"
   resource_group_name = var.resource_group
@@ -20,7 +20,7 @@ resource "azurerm_monitor_action_group" "main" {
   }
 }
 
-# Alerta CPU alta — equivalente a tu trigger Zabbix "CPU > 80%"
+# Alerta CPU alta — equivalente a el trigger Zabbix "CPU > 80%"
 resource "azurerm_monitor_metric_alert" "cpu_high" {
   name                = "alert-cpu-high-${var.environment}"
   resource_group_name = var.resource_group
@@ -78,7 +78,7 @@ resource "azurerm_monitor_metric_alert" "container_restarts" {
   }
 }
 
-# Dashboard — equivalente a tu Grafana
+# Dashboard — equivalente a Grafana
 resource "azurerm_portal_dashboard" "main" {
   name                = "dashboard-${var.project}-${var.environment}"
   resource_group_name = var.resource_group
