@@ -24,7 +24,7 @@ resource "azurerm_storage_account" "main" {
   }
 }
 
-# Shares — equivalentes a tus carpetas SMB de FILE01
+# Shares — equivalentes a carpetas SMB de FILE01
 resource "azurerm_storage_share" "comun" {
   name                 = "comun"
   storage_account_name = azurerm_storage_account.main.name
