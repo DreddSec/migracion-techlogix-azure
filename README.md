@@ -83,16 +83,16 @@ techlogix-azure/
 
 ## ❓ Decisiones de diseño
 
-**¿Por qué Container Apps en vez de una VM con LAMP?**
+> **¿Por qué Container Apps en vez de una VM con LAMP?**
 El stack LAMP original (Apache + MySQL + PHP + WordPress en una VM) es un enfoque monolítico. Container Apps permite escalar el frontend independientemente de la base de datos, aplicar actualizaciones sin downtime mediante revisiones, y eliminar la gestión del sistema operativo subyacente. MySQL Flexible Server gestiona parches, backups y alta disponibilidad de forma nativa.
 
-**¿Por qué Azure Files en vez de una VM con Samba?**
+> **¿Por qué Azure Files en vez de una VM con Samba?**
 Azure Files proporciona el mismo protocolo SMB 3.x que el FILE01 on-premise pero sin gestión de servidor. Los shares heredan la misma estructura de permisos por departamento (`comun`, `administracion`, `it`, `produccion`).
 
-**¿Por qué Azure Monitor en vez de Zabbix?**
+> **¿Por qué Azure Monitor en vez de Zabbix?**
 Zabbix requiere una VM dedicada, agentes en cada servidor y mantenimiento continuo. Azure Monitor es nativo al cloud, no requiere infraestructura adicional y se integra directamente con Container Apps y el resto de servicios Azure.
 
-**Terraform como IaC en vez de Bicep**
+> **Terraform como IaC en vez de Bicep:**
 Terraform es agnóstico al cloud provider (Azure, AWS, GCP) lo que lo hace más transferible. El state remoto en Azure Storage garantiza que la infraestructura puede ser gestionada en equipo sin conflictos.
 
 ---
