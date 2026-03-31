@@ -99,7 +99,7 @@ Terraform es agnóstico al cloud provider (Azure, AWS, GCP) lo que lo hace más 
 
 ## 🛡 State remoto
 
-El estado de Terraform se almacena de forma remota en Azure Storage, siguiendo las buenas prácticas de trabajo en equipo:
+> El estado de Terraform se almacena de forma remota en Azure Storage, siguiendo las buenas prácticas de trabajo en equipo:
 
 ```hcl
 backend "azurerm" {
@@ -202,10 +202,11 @@ module.storage.azurerm_storage_share.produccion
 - **Azure Files** — almacenamiento de archivos SMB
 - **Azure Monitor** — observabilidad y alertas
 - **Entra ID** — identidad y acceso
+- **Azure Bastion** - acceso remoto seguro
 
 ---
 
-## Proyecto base
+## 📤 Proyecto base
 
-Este proyecto es la migración cloud del proyecto ASIR on-premise TechLogix, disponible en:
+> Este proyecto es la migración cloud del proyecto ASIR on-premise TechLogix, disponible en:
 👉 [github.com/DreddSec/proyecto-asir-techlogix](https://github.com/DreddSec/proyecto-asir-techlogix)
