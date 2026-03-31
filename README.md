@@ -18,6 +18,7 @@ Este proyecto es la evolución cloud del [proyecto ASIR on-premise](https://gith
 | WEB01 (LAMP + WordPress) | Container Apps + MySQL Flexible | Modernización |
 | MON01 (Zabbix + Grafana) | Azure Monitor + Log Analytics | Modernización |
 | BAK01 (Bacula) | MySQL built-in backup (7 días) | Modernización |
+| SEC01 (OpenVPN) | Azure Bastion (Developer SKU) | Modernización |
 
 ### Diagrama de recursos desplegados
 
@@ -31,6 +32,7 @@ Azure Subscription
     │   │   ├── snet-dmz          (10.0.100.0/24) + nsg-dmz
     │   │   ├── snet-management   (10.0.10.0/24)
     │   │   └── snet-monitoring   (10.0.70.0/24)
+    │   │   └── bas-techlogix-prod (Azure Bastion Developer — acceso admin seguro)
     │
     ├── Identity (Entra ID)
     │   ├── GRP_Administracion → carlos.ruiz, maria.lopez
