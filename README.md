@@ -1,8 +1,8 @@
 # ☁️ TechLogix — Migración a Azure Cloud
 
-Migración y modernización de la infraestructura on-premise de **TechLogix** a Microsoft Azure, utilizando Terraform como herramienta de IaC.
+| Migración y modernización de la infraestructura on-premise de **TechLogix** a Microsoft Azure, utilizando Terraform como herramienta de IaC.
 
-Este proyecto es la evolución cloud del [proyecto ASIR on-premise](https://github.com/DreddSec/proyecto-asir-techlogix), donde se implementó una infraestructura completa con pfSense, Samba AD, servidores de archivos, web y monitorización sobre VirtualBox.
+| Este proyecto es la evolución cloud del [proyecto ASIR on-premise](https://github.com/DreddSec/proyecto-asir-techlogix), donde se implementó una infraestructura completa con pfSense, Samba AD, servidores de archivos, web y monitorización sobre VirtualBox.
 
 ---
 
