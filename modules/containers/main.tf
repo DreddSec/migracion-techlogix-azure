@@ -1,4 +1,4 @@
-# MySQL Flexible Server — reemplaza tu MySQL de WEB01
+# MySQL Flexible Server — reemplaza MySQL de WEB01
 resource "azurerm_mysql_flexible_server" "main" {
   name                   = "mysql-${var.project}-${var.environment}"
   resource_group_name    = var.resource_group
@@ -40,7 +40,7 @@ resource "azurerm_mysql_flexible_server_firewall_rule" "azure_services" {
   end_ip_address      = "0.0.0.0"
 }
 
-# Log Analytics Workspace — necesario para Container Apps
+# Log Analytics Workspace — Container Apps
 resource "azurerm_log_analytics_workspace" "main" {
   name                = "log-${var.project}-${var.environment}"
   resource_group_name = var.resource_group
