@@ -1,4 +1,4 @@
-# Grupos — equivalentes a tus GRP_* de Samba
+# Grupos — equivalentes a GRP_* de Samba
 resource "azuread_group" "administracion" {
   display_name     = "GRP_Administracion"
   security_enabled = true
@@ -17,7 +17,7 @@ resource "azuread_group" "produccion" {
   description      = "Departamento de Producción - TechLogix"
 }
 
-# Usuarios — mismos que en tu Samba AD
+# Usuarios — Samba AD
 resource "azuread_user" "carlos_ruiz" {
   user_principal_name = "carlos.ruiz@${var.domain}"
   display_name        = "Carlos Ruiz"
