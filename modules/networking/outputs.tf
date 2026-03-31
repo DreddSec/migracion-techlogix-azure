@@ -17,3 +17,7 @@ output "subnet_management_id" {
 output "subnet_monitoring_id" {
   value = azurerm_subnet.monitoring.id
 }
+
+output "bastion_id" {
+  value = azurerm_bastion_host.main.id
+}

@@ -138,3 +138,25 @@ resource "azurerm_subnet_network_security_group_association" "dmz" {
   subnet_id                 = azurerm_subnet.dmz.id
   network_security_group_id = azurerm_network_security_group.dmz.id
 }
+
+resource "azurerm_subnet" "bastion" {
+  name                 = "AzureBastionSubnet"
+  resource_group_name  = var.resource_group
+  virtual_network_name = azurerm_virtual_network.main.name
+  address_prefixes     = ["10.0.200.0/24"]
+}
+
+resource "azurerm_bastion_host" "main" {
+  name                = "bas-${var.project}-${var.environment}"
+  location            = var.location
+  resource_group_name = var.resource_group
+  sku                 = "Developer"
+
+  virtual_network_id = azurerm_virtual_network.main.id
+
+  tags = {
+    project     = var.project
+    environment = var.environment
+    managed_by  = "terraform"
+  }
+}
