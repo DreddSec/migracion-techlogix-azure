@@ -126,7 +126,7 @@ backend "azurerm" {
 
 ---
 
-## 📊 Recursos desplegados (39 total)
+## 📊 Recursos desplegados (41 total)
 
 ```
 terraform state list
