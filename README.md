@@ -159,8 +159,10 @@ module.monitoring.azurerm_monitor_action_group.main
 module.monitoring.azurerm_monitor_metric_alert.container_restarts
 module.monitoring.azurerm_monitor_metric_alert.cpu_high
 module.monitoring.azurerm_portal_dashboard.main
+module.networking.azurerm_bastion_host.main
 module.networking.azurerm_network_security_group.dmz
 module.networking.azurerm_network_security_group.servers
+module.networking.azurerm_subnet.bastion
 module.networking.azurerm_subnet.dmz
 module.networking.azurerm_subnet.management
 module.networking.azurerm_subnet.monitoring
